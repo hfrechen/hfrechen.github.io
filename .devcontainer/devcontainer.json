@@ -24,7 +24,7 @@
             ]
         }
     },
-    "workspaceFolder": "/usr/src/app",
+    "workspaceFolder": "/home/vscode/app",
     "remoteUser": "vscode",
     "forwardPorts": [
         4000
