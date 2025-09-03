@@ -2,7 +2,7 @@
     "name": "ACADEMIC PAGES",
     "build": {
         "dockerfile": "../Dockerfile",
-        "context": "."
+        "context": ".."
     },
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
