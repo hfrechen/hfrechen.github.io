@@ -24,7 +24,8 @@ USER vscode
 COPY Gemfile ./
 
 # Install bundler and dependencies
-RUN gem install connection_pool:2.5.0
-RUN gem install bundler:2.3.26
+RUN gem install bundler:2.7.1
+
+WORKDIR /home/vscode/app
 RUN bundle config set --local path 'vendor/bundle'
-RUN bundle install --local
+RUN bundle install
