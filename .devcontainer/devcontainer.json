@@ -4,6 +4,15 @@
         "dockerfile": "./Dockerfile",
         "context": ".."
     },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "true"
+        }
+    },
     // Configure tool-specific properties.
     "customizations": {
         // Configure properties specific to VS Code.
@@ -28,5 +37,6 @@
     "remoteUser": "vscode",
     "forwardPorts": [
         4000
-    ] // Add port forwarding
+    ], // Add port forwarding
+    "postCreateCommand": "bundle config set --local path 'vendor/bundle' && bundle install"
 }

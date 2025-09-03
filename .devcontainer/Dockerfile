@@ -25,7 +25,3 @@ COPY Gemfile ./
 
 # Install bundler and dependencies
 RUN gem install bundler:2.7.1
-
-WORKDIR /home/vscode/app
-RUN bundle config set --local path 'vendor/bundle'
-RUN bundle install
