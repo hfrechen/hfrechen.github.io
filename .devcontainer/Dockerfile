@@ -1,5 +1,5 @@
 # Base image: Ruby with necessary dependencies for Jekyll
-FROM ruby:3.4
+FROM ruby:3.2
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -12,10 +12,10 @@ RUN groupadd -g 1000 vscode && \
     useradd -m -u 1000 -g vscode vscode
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /home/vscode/app
 
 # Set permissions for the working directory
-RUN chown -R vscode:vscode /usr/src/app
+RUN chown -R vscode:vscode /home/vscode/app
 
 # Switch to the non-root user
 USER vscode
@@ -26,4 +26,5 @@ COPY Gemfile ./
 # Install bundler and dependencies
 RUN gem install connection_pool:2.5.0
 RUN gem install bundler:2.3.26
+RUN bundle config set --local path 'vendor/bundle'
 RUN bundle install
